@@ -1,3 +1,281 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    /********************************************
+    * JSON/JSONC RULES
+    ********************************************/
+    "jsonc/no-comments": "off",
+    "jsonc/auto"       : "error",
+    "jsonc/comma-style": [
+        "error",
+        "last"
+    ],
+    "jsonc/no-irregular-whitespace": "error",
+
+    // Array rules
+    "jsonc/array-bracket-newline": [
+        "error",
+        {
+            "multiline": true,
+            "minItems" : null
+        }
+    ],
+    "jsonc/array-bracket-spacing": [
+        "error",
+        "never"
+    ],
+    "jsonc/array-element-newline": [
+        "error",
+        {
+            "ArrayExpression": {
+                "multiline": true,
+                "minItems" : 2
+            },
+            "ArrayPattern": "consistent"
+        }
+    ],
+
+    // Object rules
+    "jsonc/object-curly-newline": [
+        "error",
+        {
+            "ImportDeclaration": { "consistent": true },
+            "ObjectPattern"    : { "consistent": true },
+            "ObjectExpression" : {
+                "multiline"    : true,
+                "minProperties": 2
+            }
+        }
+    ],
+    "jsonc/object-curly-spacing": [
+        "error",
+        "always"
+    ],
+    "jsonc/object-property-newline": [
+        "error",
+        { "allowAllPropertiesOnSameLine": false }
+    ],
+
+    /********************************************
+    * JAVASCRIPT RULES
+    ********************************************/
+    "indent": [
+        "error",
+        4
+    ],
+    "max-len": [
+        "error",
+        {
+            "code"                : 120,
+            "ignoreStrings"       : true,
+            "ignoreUrls"          : true,
+            "ignoreRegExpLiterals": true
+        }
+    ],
+    "semi": [
+        "error",
+        "never",
+        { "beforeStatementContinuationChars": "never" }
+    ],
+    "no-extra-semi": "error",
+    "comma-dangle" : "error",
+    "quotes"       : [
+        "error",
+        "single"
+    ],
+    "quote-props": [
+        "error",
+        "as-needed",
+        { "keywords": true }
+    ],
+    "jsx-quotes": [
+        "warn",
+        "prefer-single"
+    ],
+    "arrow-parens": [
+        "warn",
+        "always"
+    ],
+    "key-spacing": [
+        "error",
+        {
+            "multiLine": {
+                "beforeColon": false,
+                "afterColon" : true
+            },
+            "align": {
+                "beforeColon": false,
+                "afterColon" : true,
+                "on"         : "colon"
+            }
+        }
+    ],
+    "brace-style": [
+        "error",
+        "stroustrup"
+    ],
+    "padding-line-between-statements": [
+        "error",
+        {
+            "blankLine": "always",
+            "prev"     : "*",
+            "next"     : "*"
+        },
+        {
+            "blankLine": "never",
+            "prev"     : "import",
+            "next"     : "import"
+        }
+    ],
+    "one-var-declaration-per-line": [
+        "error",
+        "always"
+    ],
+    "prefer-const"      : "error",
+    "no-trailing-spaces": "error",
+    "no-await-in-loop"  : "error",
+    "no-multi-assign"   : "error",
+    "no-multi-spaces"   : [
+        "error",
+        {
+            "exceptions": {
+                "TSPropertySignature": true,
+                "Property"           : true
+            }
+        }
+    ],
+    "no-multiple-empty-lines": [
+        "error",
+        {
+            "max"   : 1,
+            "maxBOF": 0,
+            "maxEOF": 1
+        }
+    ],
+    "no-implicit-coercion": "error",
+
+    // Object rules
+    "object-curly-newline": [
+        "error",
+        {
+            "ImportDeclaration": { "consistent": true },
+            "ObjectPattern"    : { "consistent": true },
+            "ObjectExpression" : {
+                "multiline"    : true,
+                "minProperties": 2
+            }
+        }
+    ],
+    "object-curly-spacing": [
+        "error",
+        "always"
+    ],
+    "object-property-newline": [
+        "error",
+        { "allowAllPropertiesOnSameLine": false }
+    ],
+
+    // Array rules
+    "array-bracket-newline": [
+        "error",
+        {
+            "multiline": true,
+            "minItems" : null
+        }
+    ],
+    "array-bracket-spacing": [
+        "error",
+        "never"
+    ],
+    "array-element-newline": [
+        "error",
+        {
+            "ArrayExpression": {
+                "multiline": true,
+                "minItems" : 2
+            },
+            "ArrayPattern": "consistent"
+        }
+    ]
+},
+"overrides": [
+    // Typescript files config
+    {
+        "files": [
+            "*.ts",
+            "*.tsx"
+        ],
+        "parser"       : "@typescript-eslint/parser",
+        "parserOptions": { "project": "./tsconfig.json" },
+        "extends"      : [
+            "plugin:tailwindcss/recommended",
+            "plugin:@typescript-eslint/strict",
+            "plugin:@typescript-eslint/stylistic-type-checked"
+        ],
+        "plugins": ["@typescript-eslint"],
+        "rules"  : {
+            // Disabled eslint rules
+            "@typescript-eslint/semi"         : "off",
+            "@typescript-eslint/quotes"       : "off",
+            "@typescript-eslint/comma-dangle" : "off",
+            "@typescript-eslint/no-extra-semi": "off",
+            "@typescript-eslint/key-spacing"  : "off",
+            "@typescript-eslint/brace-style"  : "off",
+
+            // Typescript-eslint rules
+            "@typescript-eslint/array-type": [
+                "error",
+                { "default": "generic" }
+            ],
+            "@typescript-eslint/naming-convention": [
+                "error",
+                {
+                    "selector" : ["variable"],
+                    "modifiers": [
+                        "const",
+                        "global"
+                    ],
+                    "filter": {
+                        "regex": "^config$",
+                        "match": false
+                    },
+                    "format"            : ["UPPER_CASE"],
+                    "leadingUnderscore" : "forbid",
+                    "trailingUnderscore": "allow"
+                }
+            ]
+        }
+    },
+    // Root JSON files config
+    {
+        "files" : ["*.json"],
+        "parser": "jsonc-eslint-parser",
+        "rules" : {
+            // eslint disabled rules
+            "no-multi-spaces": "off"
+        }
+    },
+    // Project JSON files config
+    {
+        "files" : ["src/**/*.json"],
+        "parser": "jsonc-eslint-parser",
+        "rules" : {
+            // eslint disabled rules
+            "no-multi-spaces": "off",
+
+            // jsonc rules
+            "jsonc/key-name-casing": [
+                "error",
+                {
+                    "camelCase"           : false,
+                    "PascalCase"          : false,
+                    "SCREAMING_SNAKE_CASE": true,
+                    "kebab-case"          : false,
+                    "snake_case"          : true,
+                    "ignores"             : []
+                }
+            ]
+        }
+    }
+]
 }
