@@ -6,6 +6,10 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  icons: {
+    icon: 'favicon.ico',
+    apple: '../../public/apple-icon.png'
+  },
   title: 'Rudy Musiani Coaching - Réservation de Séances de Coaching Personnalisées',
   description: "Réservez vos séances d'entraînement avec Rudy Musiani Coaching, votre partenaire pour des séances de coaching sportif de qualité. Maximisez vos performances physiques, atteignez vos objectifs de fitness et transformez votre condition physique. Réservez dès maintenant pour profiter d'une expérience de coaching sportif exceptionnelle avec Rudy Musiani.",
 }
