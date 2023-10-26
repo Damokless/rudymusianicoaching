@@ -74,7 +74,7 @@ export default function Home() {
               </div>
             </div>
             <div className="w-1/2">
-              <div className=" mt-28 flex flex-col gap-9">
+              <div className="flex flex-col justify-center h-full gap-9">
                 <div className="flex place-items-center">
                   <svg
                     width="24"
