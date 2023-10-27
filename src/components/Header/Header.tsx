@@ -20,7 +20,7 @@ export default function Header() {
                   className="text-white transition hover:text-white/75"
                   href="/"
                 >
-                  Acceuil
+                  Accueil
                 </Link>
               </li>
               <li>
