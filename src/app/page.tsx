@@ -228,9 +228,7 @@ export default function Home() {
           </h1>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {awards.map(award => (
-            <AwardsCard key={award.title} year={award.year} title={award.title} image={award.image} url={award.url} />
-          ))}
+          <AwardsCard />
         </div>
       </div>
     </div>
