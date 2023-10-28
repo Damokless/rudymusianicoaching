@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import logo from "@/assets/images/white_logo.png"
 import Link from "next/link";
 
 export default function Header() {
@@ -9,7 +8,7 @@ export default function Header() {
     <header className="absolute bg-transparant md:px-[75px] w-full">
       <div className="flex h-16  items-center gap-8 px-4 sm:px-6 lg:px-8">
         <Link className="flex items-center" href="/">
-          <Image src={logo} alt="Rudy Musiani logo" className="w-12" />
+          <Image src='/assets/images/white_logo.png' width={48} height={48} alt="Rudy Musiani logo" className="w-12" />
           <p className="text-white">Rudy Musiani Coaching</p>
         </Link>
         <div className="flex flex-1 items-center justify-end md:justify-center">

@@ -1,5 +1,4 @@
 "use client";
-import logo from "@/assets/images/white_logo.png";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div>
             <div className="flex justify-center sm:justify-start items-center">
-              <Image src={logo} alt="Rudy Musiani logo" className="w-12" />
+              <Image src='/assets/images/white_logo.png' width={48} height={48} alt="Rudy Musiani logo" className="w-12" />
               <h1 className="text-2xl font-bold text-white">
                 Rudy Musiani Coaching
               </h1>
