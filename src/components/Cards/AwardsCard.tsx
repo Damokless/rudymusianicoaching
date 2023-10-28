@@ -1,5 +1,3 @@
-"use client";
-
 import { AwardsCard } from "@/interface/AwardsCard";
 import Image from "next/image";
 import { ReactNode } from "react";
