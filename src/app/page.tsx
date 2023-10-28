@@ -1,3 +1,6 @@
+import AwardsCard from "@/components/Cards/AwardsCard";
+import awards from "@/data/awards.json"
+
 export default function Home() {
   return (
     <div>
@@ -27,8 +30,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="hidden lg:flex w-2/5 h-screen bg-hero bg-no-repeat bg-cover bg-center pl-4 box-border shadow-[inset_180px_0_100px_0_rgba(23,23,23,1)]">
-          <div className="bg-white "></div>
+        <div className="hidden lg:flex w-2/5 h-screen bg-hero bg-noRepeat bg-cover bg-[center_top_0.01rem] pl-4 box-border shadow-[inset_180px_0_100px_0_rgba(23,23,23,1)]">
         </div>
       </div>
       <div className=" px-[75px]">
@@ -88,8 +90,8 @@ export default function Home() {
                       fill="white"
                     />
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21Z"
                       fill="white"
                     />
@@ -111,8 +113,8 @@ export default function Home() {
                       fill="white"
                     />
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21Z"
                       fill="white"
                     />
@@ -134,8 +136,8 @@ export default function Home() {
                       fill="white"
                     />
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21Z"
                       fill="white"
                     />
@@ -157,8 +159,8 @@ export default function Home() {
                       fill="white"
                     />
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21Z"
                       fill="white"
                     />
@@ -180,8 +182,8 @@ export default function Home() {
                       fill="white"
                     />
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21Z"
                       fill="white"
                     />
@@ -203,8 +205,8 @@ export default function Home() {
                       fill="white"
                     />
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21Z"
                       fill="white"
                     />
@@ -216,6 +218,19 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className=" px-[75px] mt-64">
+        <div className="flex justify-center items-center mb-11">
+          <h1 className="text-3xl text-center text-white font-bold sm:text-6xl mt-11">
+            Découvrez votre
+            <strong className="font-bold text-blue-500"> coach</strong>
+          </h1>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {awards.map(award => (
+            <AwardsCard key={award.title} year={award.year} title={award.title} image={award.image} url={award.url} />
+          ))}
         </div>
       </div>
     </div>
