@@ -33,7 +33,7 @@ export default function Home() {
         <div className="hidden lg:flex w-2/5 h-screen bg-hero bg-noRepeat bg-cover bg-[center_top_0.01rem] pl-4 box-border shadow-[inset_180px_0_100px_0_rgba(23,23,23,1)]">
         </div>
       </div>
-      <div className=" px-[75px]">
+      <div className=" px-[75px] mt-64">
         <div className="flex justify-center items-center mb-11">
           <h1 className="text-3xl text-center text-white font-bold sm:text-6xl mt-11">
             Prêt à passer à l&apos;étape <br />
