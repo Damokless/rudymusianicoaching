@@ -1,5 +1,4 @@
 import AwardsCard from "@/components/Cards/AwardsCard";
-import awards from "@/data/awards.json"
 
 export default function Home() {
   return (
