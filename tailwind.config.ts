@@ -12,7 +12,7 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        'hero': "url('../../src/assets/images/hero.webp')",
+        'hero': "url('../../public/assets/images/hero.webp')",
       },
   }
   },
