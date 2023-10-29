@@ -9,30 +9,30 @@
         "year" : 2016,
         "title" : "Vice champion \"Model Fitness\" NFS 2016",
         "image" : "/assets/images/nfs.webp",
-        "url" : ""
+        "url" : null
     },
     {
         "year" : 2018,
         "title" : "Vice champion \"Model Fitness\" NFR 2018",
         "image" : "/assets/images/nfr.webp",
-        "url" : ""
+        "url" : null
     },
     {
         "year" : 2019,
         "title" : "Sacré champion \"Model Fitness\" NFR 2019",
         "image" : "/assets/images/nfr.webp",
-        "url" : ""
+        "url" : null
     },
     {
         "year" : 2021,
         "title" : "Top 3 \"Men's physique\" WNBF FRANCE",
         "image" : "/assets/images/wnbf.png",
-        "url" : ""
+        "url" : null
     },
     {
         "year" : 2022,
         "title" : "Top 5 \"Men's physique\" WNBF FRANCE",
         "image" : "/assets/images/wnbf.png",
-        "url" : ""
+        "url" : null
     }
 ]
