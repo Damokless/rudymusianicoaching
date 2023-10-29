@@ -23,7 +23,7 @@ export default function Home() {
 
             <a
               className="inline-block rounded-lg bg-blue-500 px-12 py-3 text-sm font-medium text-white hover:bg-blue-700"
-              href="#"
+              href="/reservation"
             >
               Prendre un coaching
             </a>
@@ -61,7 +61,7 @@ export default function Home() {
               <div className="flex flex-col gap-4 lg:w-2/4">
                 <a
                   className="inline-block rounded-lg bg-blue-500 px-12 py-3 text-sm font-medium text-center text-white hover:bg-blue-700"
-                  href="#"
+                  href="/reservation"
                 >
                   Prendre un coaching
                 </a>

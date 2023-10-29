@@ -42,7 +42,7 @@ export default function Header() {
         <div className="hidden sm:flex">
         <Link
             className="inline-block rounded-lg bg-blue-500 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-700"
-            href="#"
+            href="/reservation"
           >
             Prendre un coaching
           </Link>
