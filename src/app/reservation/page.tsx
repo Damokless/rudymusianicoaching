@@ -17,7 +17,7 @@ export default function Reservation() {
   const [week, setWeek] = useState("")
   const [complements, setComplements] = useState("")
   const [materiel, setMateriel] = useState("")
-  const [lifestyle, setLifeStyle] = useState("")
+  const [lifestyle, setLifestyle] = useState("")
   const [options, setOptions] = useState("")
   return (
     <div className="min-h-screen p-6 flex items-center justify-center text-white pt-[150px]">
@@ -230,8 +230,8 @@ export default function Reservation() {
                   <div className="md:col-span-5 mb-6">
                     <label htmlFor="alergies">
                       A tu des allergies ou intolérance quelconques que je
-                      devrais savoir ?
-                      <span className="text-white/50 text-xs">
+                      devrais savoir ? {' '}
+                      <span className="text-white/50 text-xs"> 
                         (Fruits à coque, Gluten, lactose…)
                       </span>
                     </label>
@@ -250,7 +250,7 @@ export default function Reservation() {
                   <div className="md:col-span-5 mb-6">
                     <label htmlFor="week">
                       Quelle est ta semaine type en terme d'entrainement à
-                      l'heure actuelle ?
+                      l'heure actuelle ? {' '}
                       <span className="text-white/50 text-xs">
                         (Plus il y aura de détails plus je pourrais corriger et
                         adapter ton programme selon tes envies et objectifs)
@@ -272,7 +272,7 @@ export default function Reservation() {
                     <label htmlFor="complements">
                       As-tu déjà consommé des compléments alimentaires ? (si oui
                       lesquels), envisages-tu d'en consommer à l'avenir ? (si
-                      oui quel est ton budget ?)
+                      oui quel est ton budget ?) {' '}
                       <span className="text-white/50 text-xs">
                         Les compléments alimentaires ne sont pas du tout un
                         passage obligatoire !
@@ -292,7 +292,7 @@ export default function Reservation() {
 
                   <div className="md:col-span-5 mb-6">
                     <label htmlFor="materiel">
-                      Qu'as-tu comme matériel à disposition pour t'entrainer ?
+                      Qu'as-tu comme matériel à disposition pour t'entrainer ? {' '}
                       <span className="text-white/50 text-xs">
                         (en salle/maison)
                       </span>
@@ -311,10 +311,9 @@ export default function Reservation() {
 
                   <div className="md:col-span-5 mb-6">
                     <label htmlFor="lifestyle">
-                      Quelles-sont tes habitudes de vie ?
-                      <span className="text-white/50 text-xs">
-                        (Heures de réveil habituelles régulières ou non, heures
-                        de sommeil en moyenne, heures de repas, etc...)
+                      Quelles-sont tes habitudes de vie ? {' '}
+                      <span className=" text-white/50 text-xs">
+                        (Heures de réveil habituelles régulières ou non, heures de sommeil en moyenne, heures de repas, etc...)
                       </span>
                     </label>
                     <div className=" bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
@@ -324,7 +323,7 @@ export default function Reservation() {
                         placeholder="Je me réveille à 8h ..."
                         className="px-4 pt-1 h-32 resize-y appearance-none outline-none text-gray-800 w-full bg-transparent"
                         value={lifestyle}
-                        onChange={(e) => setLifeStyle(e.target.value)}
+                        onChange={(e) => setLifestyle(e.target.value)}
                       />
                     </div>
                   </div>
