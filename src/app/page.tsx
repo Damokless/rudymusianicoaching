@@ -1,4 +1,5 @@
 import AwardsCard from "@/components/Cards/AwardsCard";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -21,12 +22,12 @@ export default function Home() {
               Découvrez une nouvelle ère de fitness dès aujourd&apos;hui.
             </p>
 
-            <a
+            <Link
               className="inline-block rounded-lg bg-blue-500 px-12 py-3 text-sm font-medium text-white hover:bg-blue-700"
               href="/reservation"
             >
               Prendre un coaching
-            </a>
+            </Link>
           </div>
         </div>
         <div className="hidden lg:flex w-2/5 h-screen bg-hero bg-noRepeat bg-cover bg-[center_top_0.01rem] pl-4 box-border shadow-[inset_180px_0_100px_0_rgba(23,23,23,1)]">
@@ -59,19 +60,19 @@ export default function Home() {
                 <p className=" mt-3 text-white">Pour 3 mois</p>
               </div>
               <div className="flex flex-col gap-4 lg:w-2/4">
-                <a
+                <Link
                   className="inline-block rounded-lg bg-blue-500 px-12 py-3 text-sm font-medium text-center text-white hover:bg-blue-700"
                   href="/reservation"
                 >
                   Prendre un coaching
-                </a>
+                </Link>
 
-                <a
+                <Link
                   className="inline-block rounded-lg border border-blue-500 px-12 py-3 text-sm text-center font-medium text-white hover:bg-blue-500"
                   href="#"
                 >
                   Découvrir Rudy
-                </a>
+                </Link>
               </div>
             </div>
             <div className="w-1/2">
@@ -222,8 +223,8 @@ export default function Home() {
       <div className=" px-[75px] mt-64">
         <div className="flex justify-center items-center mb-11">
           <h1 className="text-3xl text-center text-white font-bold sm:text-6xl mt-11">
-            Découvrez votre
-            <strong className="font-bold text-blue-500"> coach</strong>
+            Découvrez votre{' '}
+            <strong className="font-bold text-blue-500">coach</strong>
           </h1>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
