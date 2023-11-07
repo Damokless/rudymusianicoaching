@@ -1,7 +1,12 @@
 'use client'
+import formValidator from '@/functions/formValidator';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Reservation() {
+  const router = useRouter()
   const [plan, setPlan] = useState("")
   const [fullName, setFullName] = useState("")
   const [mail, setMail] = useState("")
@@ -19,6 +24,15 @@ export default function Reservation() {
   const [materiel, setMateriel] = useState("")
   const [lifestyle, setLifestyle] = useState("")
   const [options, setOptions] = useState("")
+  async function checkout() {
+    const returnValidator = formValidator({fullName, mail, phone, plan})
+
+    if (returnValidator !== 0) {
+      toast.error(returnValidator, { position: "top-right", autoClose: 5000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, theme: "dark", });
+    }
+    const { session } = await fetch('/api/checkout', {method : 'POST', body: JSON.stringify({plan, fullName, mail, phone, age, objectifs, pastSports, body, dispos, diseases, journey, alergies, week, complements, materiel, lifestyle, options})}).then(res => res.json()).then(data => {return data})
+    router.push(session)
+  }
   return (
     <div className="min-h-screen p-6 flex items-center justify-center text-white pt-[150px]">
       <div className="container max-w-screen-xl mx-auto">
@@ -347,10 +361,10 @@ export default function Reservation() {
                   <div className="md:col-span-5 mb-6 text-center">
                     <h1>Choisis la formule que tu veux</h1>
                     <div className="flex justify-center gap-8 mt-6">
-                      <button onClick={() => setPlan('one_month')} className={`inline-block rounded-lg border border-blue-500 ${plan === 'one_month' ? 'bg-blue-500' : 'bg-none'} px-12 py-3 text-sm text-center font-medium text-white`}>
+                      <button onClick={() => setPlan('ONE_MONTH')} className={`inline-block rounded-lg border border-blue-500 ${plan === 'ONE_MONTH' ? 'bg-blue-500' : 'bg-none'} px-12 py-3 text-sm text-center font-medium text-white`}>
                         1 mois
                       </button>
-                      <button onClick={() => setPlan('three_month')} className={`inline-block rounded-lg border border-blue-500 ${plan === 'three_month' ? 'bg-blue-500' : 'bg-none'} px-12 py-3 text-sm text-center font-medium text-white`}>
+                      <button onClick={() => setPlan('THREE_MONTH')} className={`inline-block rounded-lg border border-blue-500 ${plan === 'THREE_MONTH' ? 'bg-blue-500' : 'bg-none'} px-12 py-3 text-sm text-center font-medium text-white`}>
                         3 mois
                       </button>
                     </div>
@@ -358,7 +372,8 @@ export default function Reservation() {
 
                   <div className="md:col-span-5 mb-6 text-right mt-5">
                     <div className="inline-flex items-end">
-                      <button className="inline-block rounded-lg bg-blue-500 px-12 py-3 text-sm font-medium text-center text-white hover:bg-blue-700">
+                    <ToastContainer />
+                      <button onClick={() => checkout()} className="inline-block rounded-lg bg-blue-500 px-12 py-3 text-sm font-medium text-center text-white hover:bg-blue-700">
                         PAYER
                       </button>
                     </div>
