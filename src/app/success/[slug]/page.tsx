@@ -1,8 +1,10 @@
 import getStripeSession from "@/functions/getStripeSession";
+import sendMail from "@/functions/sendMail";
 import Link from "next/link";
 
 export default async function Reservation({params,}: {params: { slug: string };}) {
   const stripe_session = await getStripeSession(params.slug);
+  sendMail(stripe_session.metadata)
   return (
     <div>
       <div className="pt-[150px] flex justify-center items-center">
