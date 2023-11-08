@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 const stripe = require('stripe')(process.env.API_KEY_STRIPE_SECRET);
 
 export async function POST(req : Request) {
+  const origin = req.headers.get('origin')
   const { plan, fullName, mail, phone, age, objectifs, pastSports, body, dispos, diseases, journey, alergies, week, complements, materiel, lifestyle, options} = await req.json()
   const PRICE_ID = plan === 'ONE_MONTH' ? process.env.ONE_MONTH_PLAN_STRIPE_ID : process.env.THREE_MONTH_PLAN_STRIPE_ID
   const formule = plan === 'ONE_MONTH' ? '1 mois' : '3 mois'
@@ -38,8 +39,8 @@ export async function POST(req : Request) {
     invoice_creation: {
         enabled: true,
     },
-    success_url: `http://localhost:3000/success/{CHECKOUT_SESSION_ID}`,
-    cancel_url: 'https://rudymusianicoaching.vercel.app',
+    success_url: `${origin}/success/{CHECKOUT_SESSION_ID}`,
+    cancel_url: origin,
   });
 
   return NextResponse.json({session : session.url})
