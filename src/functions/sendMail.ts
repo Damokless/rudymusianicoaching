@@ -11,7 +11,7 @@ export default async function sendMail(user : any) {
   const data = {
     sender: {
       name: 'Rudy Musiani',
-      email: 'rudymusiani@gmail.com',
+      email: process.env.EMAIL,
     },
     to: [
       {
