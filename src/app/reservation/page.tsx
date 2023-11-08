@@ -29,6 +29,7 @@ export default function Reservation() {
 
     if (returnValidator !== 0) {
       toast.error(returnValidator, { position: "top-right", autoClose: 5000, hideProgressBar: false, closeOnClick: true, pauseOnHover: true, draggable: true, progress: undefined, theme: "dark", });
+      return 1
     }
     const { session } = await fetch('/api/checkout', {method : 'POST', body: JSON.stringify({plan, fullName, mail, phone, age, objectifs, pastSports, body, dispos, diseases, journey, alergies, week, complements, materiel, lifestyle, options})}).then(res => res.json()).then(data => {return data})
     router.push(session)
