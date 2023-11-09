@@ -30,7 +30,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div className="hidden lg:flex w-2/5 h-screen bg-hero bg-noRepeat bg-cover bg-[center_top_0.01rem] pl-4 box-border shadow-[inset_180px_0_100px_0_rgba(23,23,23,1)]">
+        <div className="hidden lg:flex w-2/5 h-screen bg-hero bg-noRepeat bg-cover bg-[center_top_0.01rem] pl-4 box-border shadow-[inset_180px_-90px_100px_0_rgba(23,23,23,1)]">
         </div>
       </div>
       <div className=" px-[75px] mt-64">
