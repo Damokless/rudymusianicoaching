@@ -4,8 +4,8 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div>
-      <div className="w-full h-full flex">
-        <div className="w-3/5 pt-[250px] pl-[75px]">
+      <div className="w-full h-full flex justify-center lg:justify-normal">
+        <div className="w-10/12 lg:w-3/5 pt-[250px] lg:pl-[75px]">
           <div className="text-center sm:text-left">
             <h1 className="text-3xl text-white font-bold sm:text-6xl mb-11">
               Coaching sportif personnalisé <br />
