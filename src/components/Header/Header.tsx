@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="absolute bg-transparant md:px-[75px] w-full">
+    <header className="absolute bg-transparant md:px-[48px] w-full">
       <div className="flex h-16  items-center gap-8 px-4 sm:px-6 lg:px-8">
         <Link className="flex items-center w-full justify-center lg:justify-start lg:w-auto" href="/">
           <Image src='/assets/images/white_logo.png' width={48} height={48} alt="Rudy Musiani logo" className="w-12" />
