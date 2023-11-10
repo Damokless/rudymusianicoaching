@@ -220,7 +220,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className=" px-[75px] mt-64">
+      <div className=" px-[32px] lg:px-[75px] mt-64">
         <div className="flex justify-center items-center mb-11">
           <h1 className="text-3xl text-center text-white font-bold sm:text-6xl mt-11">
             Découvrez votre{' '}
