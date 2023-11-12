@@ -41,18 +41,18 @@ export default function Home() {
           </h1>
         </div>
         <div className="flex justify-center items-center">
-          <div className="bg-[#3A3A3A]/50 py-16 px-24 flex rounded-3xl w-10/12">
-            <div className="w-1/2">
+          <div className="bg-[#3A3A3A]/50 py-8 px-8 lg:px-24 lg:py-16 flex flex-col lg:flex-row rounded-3xl w-11/12 lg:w-10/12">
+            <div className=" lg:w-1/2">
               <div className=" mb-16">
-                <h2 className="text-white lg:text-3xl font-semibold">
+                <h2 className="text-white text-center md:text-left lg:text-3xl font-semibold">
                   Coaching personnalisé
                 </h2>
-                <p className="text-white text-sm font-light mt-2">
+                <p className="text-white text-center md:text-left text-sm font-light mt-2">
                   Entraînement personnalisé, Musculation, Suivi <br /> de
                   progression, Plan d&apos;exercices sur mesure
                 </p>
               </div>
-              <div className="mb-16">
+              <div className="mb-16 text-center md:text-left">
                 <h3 className=" text-xl text-blue-500 font-bold">110 €</h3>
                 <p className=" mt-3 text-white">Par personne / mois</p>
                 <p className=" mt-4 text-[#6F6F6F]">Ou</p>
@@ -75,7 +75,7 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="w-1/2">
+            <div className=" hidden lg:block lg:w-1/2">
               <div className="flex flex-col justify-center h-full gap-9">
                 <div className="flex place-items-center">
                   <svg
