@@ -8,7 +8,7 @@ export default async function Reservation({params}: {params: { slug: string }}) 
   return (
     <div>
       <div className="pt-[150px] flex justify-center items-center">
-        <div className="bg-[#3A3A3A]/50 p-6  md:mx-auto rounded-3xl">
+        <div className="bg-[#3A3A3A]/50 p-6 w-11/12 md:mx-auto rounded-3xl">
         <svg
             width="24"
             height="24"
@@ -32,7 +32,7 @@ export default async function Reservation({params}: {params: { slug: string }}) 
             <h3 className="md:text-2xl text-base text-blue-500 font-semibold text-center">
               Le paiement a été effectué !
             </h3>
-            <p className="text-white/50 my-2 w-1/2 text-justify">
+            <p className="text-white/50 my-2 lg:w-1/2 text-justify">
             Merci {stripe_session.metadata.fullName} pour votre confiance, vous allez recevoir un mail pour la facture à l'adresse e-mail suivante : {stripe_session.customer_details.email} <br /> Rudy prendra contact avec vous rapidement.
             </p>
             <div className="py-10 text-center">
