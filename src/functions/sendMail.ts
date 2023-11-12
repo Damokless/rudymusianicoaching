@@ -15,8 +15,8 @@ export default async function sendMail(user : any) {
     },
     to: [
       {
-        name: 'Alex',
-        email: 'bouzon.alexandre@gmail.com',
+        name: 'Rudy Musiani',
+        email: process.env.EMAIL,
       },
     ],
     subject: '🚀 Nouveau client coaching perso',
